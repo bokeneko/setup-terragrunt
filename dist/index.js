@@ -8,6 +8,8 @@
 const os = __nccwpck_require__(87);
 const path = __nccwpck_require__(622);
 const { execSync } = __nccwpck_require__(129)
+const { chmodSync } = __nccwpck_require__(747);
+
 
 // External
 const core = __nccwpck_require__(186);
@@ -50,7 +52,8 @@ async function downloadCLI(version, platform, arch) {
     if (!pathToCLI) {
         throw new Error(`Unable to download Terragrunt from ${url}`);
     }
-    const cachedPath = await tc.cacheFile(pathToCLI, `terragrunt${exeSuffix}`, 'terragrunt', 'tg_version');
+    chmodSync(pathToCLI, 0o755);
+    const cachedPath = await tc.cacheFile(pathToCLI, `terragrunt${exeSuffix}`, 'terragrunt', tg_version);
     return cachedPath;
 }
 
