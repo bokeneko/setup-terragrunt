@@ -1,0 +1,25 @@
+{
+  "name": "setup-terragrunt",
+  "version": "1.0.0",
+  "description": "Setup Terragrunt CLI for GitHub Actions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ncc build index.js --out dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.4.0",
+    "@actions/io": "^1.1.1",
+    "@actions/tool-cache": "^1.7.1"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.28.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bokeneko/setup-terragrunt.git"
+  }
+}
